@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeevan Jyoti Clinic | जीवन ज्योति क्लीनिक</title>
+<style>
+:root{--green:#0a7d4b;--dark:#064a2d;--light:#f4faf6;--text:#333}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{color:var(--text);line-height:1.7;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+header{background:var(--green);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1100px;margin:0 auto}
+.logo{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+.logo img{height:40px;width:40px;border-radius:50%;object-fit:cover}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{transition:.3s}
+.nav-links a:hover{opacity:.8}
+.menu-btn{display:none;font-size:26px;background:none;border:none;color:#fff;cursor:pointer}
+
+.hero{background:linear-gradient(rgba(6,74,45,.75),rgba(6,74,45,.75)),url('REPLACE-HERO-IMAGE-URL') center/cover;color:#fff;text-align:center;padding:110px 20px}
+.hero h1{font-size:44px;margin-bottom:10px}
+.hero p{font-size:18px;max-width:600px;margin:0 auto 26px}
+.rating{font-size:20px;margin-bottom:20px}
+.stars{color:#ffd000}
+.btn{display:inline-block;background:#ffd000;color:#064a2d;padding:14px 32px;border-radius:30px;font-weight:700;transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+
+section{padding:70px 0}
+.section-title{text-align:center;font-size:32px;color:var(--dark);margin-bottom:12px}
+.section-sub{text-align:center;color:#777;margin-bottom:45px}
+
+.about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-grid img{width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.card{background:#fff;border:1px solid #eee;border-radius:16px;padding:30px;text-align:center;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.1);border-color:var(--green)}
+.card .icon{font-size:40px;margin-bottom:16px}
+.card h3{color:var(--dark);margin-bottom:10px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px;transition:.4s;cursor:pointer}
+.gallery img:hover{transform:scale(1.04)}
+
+.reviews{background:var(--light)}
+.review-card{background:#fff;border-radius:16px;padding:26px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.review-card .name{font-weight:700;color:var(--dark)}
+.review-card .date{font-size:13px;color:#999;margin-bottom:10px}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.info-box{background:var(--light);padding:26px;border-radius:14px;border-left:4px solid var(--green)}
+.info-box h3{color:var(--dark);margin-bottom:8px}
+.map iframe{width:100%;height:100%;min-height:300px;border:0;border-radius:14px}
+
+footer{background:#043a23;color:#cfe3d8;text-align:center;padding:50px 20px 24px}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin:20px 0}
+.footer-links a{transition:.3s}
+.footer-links a:hover{color:#fff;text-shadow:0 0 12px rgba(255,255,255,.7)}
+.copyright{border-top:1px solid #0a5c39;margin-top:24px;padding-top:20px;font-size:13px;color:#8fb3a1}
+
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--green);flex-direction:column;text-align:center;padding:20px 0}
+.nav-links.open{display:flex}
+.menu-btn{display:block}
+.hero h1{font-size:32px}
+.about-grid,.contact-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <img src="REPLACE-LOGO-URL" alt="Logo" onerror="this.style.display='none'">
+      Jeevan Jyoti Clinic
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <h1>जीवन ज्योति क्लीनिक</h1>
+    <p>Jeevan Jyoti Clinic — Trusted medical care in Patna, Bihar</p>
+    <div class="rating"><span class="stars">★★★★★</span> 5.0 (3 Reviews)</div>
+    <a href="#contact" class="btn">Book Appointment</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="section-title">About Us</h2>
+    <p class="section-sub">Compassionate healthcare for every patient</p>
+    <div class="about-grid">
+      <img src="REPLACE-ABOUT-IMAGE-URL" alt="Clinic" onerror="this.src='https://via.placeholder.com/500x350?text=Add+Clinic+Photo'">
+      <div>
+        <p>Jeevan Jyoti Clinic Patna, Bihar mein ek trusted medical clinic hai jo patients ko affordable aur quality healthcare provide karta hai. Hamari team har patient ko personal attention aur care deti hai.</p>
+        <br>
+        <p>✔ Experienced doctors<br>✔ Clean & hygienic facility<br>✔ Affordable treatment<br>✔ Friendly staff</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Healthcare services we provide</p>
+    <div class="cards">
+      <div class="card"><div class="icon">🩺</div><h3>General Checkup</h3><p>Complete health checkup by experienced doctors.</p></div>
+      <div class="card"><div class="icon">💊</div><h3>Medicine</h3><p>Genuine medicines available at the clinic.</p></div>
+      <div class="card"><div class="icon">🧪</div><h3>Diagnosis</h3><p>Accurate diagnosis and treatment plans.</p></div>
+      <div class="card"><div class="icon">🚑</div><h3>Emergency Care</h3><p>Quick response for urgent medical needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="gallery">
+  <div class="container">
+    <h2 class="section-title">Photos & Videos</h2>
+    <p class="section-sub">A look inside our clinic</p>
+    <div class="gallery">
+      <img src="REPLACE-GALLERY-IMAGE-1" alt="Photo 1" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+1'">
+      <img src="REPLACE-GALLERY-IMAGE-2" alt="Photo 2" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+2'">
+      <img src="REPLACE-GALLERY-IMAGE-3" alt="Photo 3" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+3'">
+      <img src="REPLACE-GALLERY-IMAGE-4" alt="Photo 4" onerror="this.src='https://via.placeholder.com/300x200?text=Photo+4'">
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="container">
+    <h2 class="section-title">Reviews (5.0 ★)</h2>
+    <p class="section-sub">What our patients say</p>
+    <div class="cards">
+      <div class="review-card"><div class="name">MGFX Designs</div><div class="date">a month ago</div><div class="stars">★★★★★</div><p>Excellent clinic with caring staff.</p></div>
+      <div class="review-card"><div class="name">Bandna Kumari</div><div class="date">a year ago</div><div class="stars">★★★★★</div><p>Very good treatment and friendly doctors.</p></div>
+      <div class="review-card"><div class="name">Vidushi Bharti</div><div class="date">4 years ago</div><div class="stars">★★★★★</div><p>Highly recommended clinic in Patna.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact & Location</h2>
+    <p class="section-sub">Visit us or give us a call</p>
+    <div class="contact-grid">
+      <div>
+        <div class="info-box"><h3>📍 Address</h3><p>J45W+8GF, Kaviraj Path, opp. Christian Kabristan, Pirmuhani, Ghrounda, Patna, Bihar 800001</p></div>
+        <br>
+        <div class="info-box"><h3>📞 Phone</h3><p><a href="tel:09334518837">093345 18837</a></p></div>
+        <br>
+        <a href="tel:09334518837" class="btn">Call Now</a>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=Jeevan+Jyoti+Clinic+Patna+Bihar+800001&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>जीवन ज्योति क्लीनिक</h2>
+  <p>Jeevan Jyoti Clinic, Patna, Bihar</p>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="copyright">© 2026 Jeevan Jyoti Clinic. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
